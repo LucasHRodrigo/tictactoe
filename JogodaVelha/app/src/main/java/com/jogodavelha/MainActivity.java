@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Som.executar(this, R.raw.sinister);
+        Som.executar(this, R.raw.start);
 
         buttonContinuar = findViewById(R.id.buttonContinuar);
         buttonContinuar.setOnClickListener(this);
@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (view.getId() == R.id.buttonContinuar) {
             Intent intent = new Intent(this, MainActivityJogador1.class);
             startActivity(intent);
-            Som.parar();
         } if (view.getId() == R.id.imageButtonVolOn) {
             Som.parar();
         }

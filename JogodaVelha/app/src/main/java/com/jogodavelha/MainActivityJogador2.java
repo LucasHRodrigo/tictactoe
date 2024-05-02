@@ -24,8 +24,6 @@ public class MainActivityJogador2 extends AppCompatActivity implements View.OnCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_jogador2);
 
-        Som.executar(this, R.raw.keyboard);
-
         editTextPlayer2 = findViewById(R.id.editTextPlayer2);
         editTextPlayer2.setOnClickListener(this);
 
@@ -37,12 +35,16 @@ public class MainActivityJogador2 extends AppCompatActivity implements View.OnCl
 
         imageButtonVolOn2 = findViewById(R.id.imageButtonVolOn2);
         imageButtonVolOn2.setOnClickListener(this);
+
+
     }
 
     @Override
     public void onClick(View view) {
         String nomePlayer2 = editTextPlayer2.getText().toString();
-
+        Intent telajogador1 = getIntent();
+        Jogo jogo = (Jogo) telajogador1.getSerializableExtra("jogo");
+        jogo.setNomeJogador2(nomePlayer2);
         if (view.getId() == R.id.buttonContinuarTela3) {
                 if (nomePlayer2.isEmpty() == true) {
                 Toast.makeText(
@@ -50,15 +52,17 @@ public class MainActivityJogador2 extends AppCompatActivity implements View.OnCl
                         "Insira um nome",
                         Toast.LENGTH_SHORT).show();
                 } if (nomePlayer2.isEmpty() == false) {
-                //Intent intent = new Intent(this, MainActivity.class);
-                //startActivity(intent);
-                //finish
-                }
+                    Intent intent = new Intent(this, JogoActivity.class);
+                    intent.putExtra("jogo", jogo);
+                    startActivity(intent);
+                    finish();
+                    Som.parar();
+
+            }
             } if (view.getId() == R.id.imageButtonVoltarTela3) {
                 Intent intent = new Intent(this, MainActivityJogador1.class);
                 startActivity(intent);
                 finish();
-                Som.parar();
             } if (view.getId() == R.id.imageButtonVolOn2) {
                 Som.parar();
         }

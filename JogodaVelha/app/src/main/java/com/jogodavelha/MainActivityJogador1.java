@@ -23,8 +23,6 @@ public class MainActivityJogador1 extends AppCompatActivity implements View.OnCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_jogador1);
 
-        Som.executar(this, R.raw.keyboard);
-
         editTextPlayer1 = findViewById(R.id.editTextPlayer1);
         editTextPlayer1.setOnClickListener(this);
 
@@ -41,6 +39,9 @@ public class MainActivityJogador1 extends AppCompatActivity implements View.OnCl
     @Override
     public void onClick(View view) {
         String nomePlayer1 = editTextPlayer1.getText().toString();
+        Jogo jogo = new Jogo();
+        jogo.setNomeJogador1(nomePlayer1);
+
 
         if (view.getId() == R.id.buttonContinuarTela2) {
                 if (nomePlayer1.isEmpty() == true) {
@@ -50,6 +51,7 @@ public class MainActivityJogador1 extends AppCompatActivity implements View.OnCl
                             Toast.LENGTH_SHORT).show();
                 } if (nomePlayer1.isEmpty() == false) {
                     Intent intent = new Intent(this, MainActivityJogador2.class);
+                    intent.putExtra("jogo", jogo);
                     startActivity(intent);
                     finish();
                 }
@@ -57,7 +59,6 @@ public class MainActivityJogador1 extends AppCompatActivity implements View.OnCl
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 finish();
-                Som.parar();
             } if (view.getId() == R.id.imageButtonVolOn1) {
                 Som.parar();
             }
