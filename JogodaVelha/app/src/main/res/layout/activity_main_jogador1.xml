@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivityJogador1">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#FFFFFF"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="377dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
+            android:fontFamily="@font/dotgothic16"
+            android:text="Insira o nome do primeiro jogador"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="35sp" />
+
+        <EditText
+            android:id="@+id/editTextPlayer1"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:ems="10"
+            android:fontFamily="@font/dotgothic16"
+            android:hint="Insira seu nome"
+            android:inputType="text"
+            android:textAlignment="center"
+            android:textColorHint="@color/hint" />
+
+        <Button
+            android:id="@+id/buttonContinuarTela2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="@color/bgButton"
+            android:fontFamily="@font/dotgothic16"
+            android:text="Continuar"
+            android:textColor="@color/buttonText"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/imageButtonVoltarTela2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|left"
+                android:layout_marginTop="170dp"
+                android:backgroundTint="#00FFFFFF"
+                android:src="@drawable/baseline_keyboard_double_arrow_left_24" />
+
+            <ImageButton
+                android:id="@+id/imageButtonVolOn1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|left"
+                android:layout_marginTop="170dp"
+                android:backgroundTint="#00FFFFFF"
+                app:srcCompat="@drawable/baseline_volume_up_24" />
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
